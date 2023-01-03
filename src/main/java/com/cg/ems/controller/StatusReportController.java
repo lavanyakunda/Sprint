@@ -16,6 +16,8 @@ import com.cg.ems.exception.StatusIdExistsException;
 import com.cg.ems.service.IComplianceServiceImpl;
 import com.cg.ems.service.IStatusReportServiceImpl;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/ems")
 public class StatusReportController {
@@ -23,7 +25,7 @@ public class StatusReportController {
 	IStatusReportServiceImpl sService;
 	
 	@PostMapping("/create/statusreport")
-	public void createStatusReport(@RequestBody StatusReportDto statusreport) throws StatusIdExistsException {
+	public void createStatusReport(@Valid @RequestBody StatusReportDto statusreport) throws StatusIdExistsException {
 		this.sService.createStatusReport(statusreport);
 	}
 	@GetMapping("/getall/status/report/{userId}/{complianceId}")

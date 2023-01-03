@@ -21,6 +21,8 @@ import com.cg.ems.exception.RlNotExistsException;
 import com.cg.ems.exception.RlNotExistsWithIdException;
 import com.cg.ems.service.IComplianceServiceImpl;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/ems")
 public class ComplianceController {
@@ -29,7 +31,7 @@ public class ComplianceController {
 	
 	
 	@PostMapping("/create/rl")
-	public void createRl(@RequestBody ComplianceDto cdto ) throws ComplianceIdExistsException {
+	public void createRl(@Valid @RequestBody ComplianceDto cdto ) throws ComplianceIdExistsException {
 		this.cService.createRl(cdto);
 		
 		

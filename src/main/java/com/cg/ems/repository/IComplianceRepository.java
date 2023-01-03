@@ -15,13 +15,10 @@ import jakarta.persistence.Id;
 
 @Repository
 public interface IComplianceRepository extends JpaRepository<ComplianceDto, Integer>{
-
-	
-	//@Query("create table sReport")
-	//public StatusReportDto createStatusReport(StatusReportDto statusreport);
 	@Query("select cd from ComplianceDto cd where cd.userId=:id")
 	public List<ComplianceDto> getAllRl(@Param("id") String userId);
-	//@Query("select cd from ComplianceDto cd where cd.userId=:id and cd.complianceId=:cid")
-	//public List<StatusReportDto> getAllStatusReport(@Param("id") String userId,@Param("cid") int complianceId);
+	
+
+	
 
 }

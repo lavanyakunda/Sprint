@@ -1,5 +1,7 @@
 package com.cg.ems.exception;
+
 import java.time.LocalDateTime;
+
 public class EMSErrorInfo {
 	String msg;
 	String uri;
@@ -35,4 +37,6 @@ public class EMSErrorInfo {
 	public String toString() {
 		return "EMSErrorInfo [msg=" + msg + ", uri=" + uri + ", timestamp=" + timestamp + "]";
 	}
+	
+	
 }
